@@ -1,0 +1,295 @@
+section.lot-map {
+  background-color: $alternate-section-bg-color;
+  text-align: center;
+  position: relative;
+
+  h2 {
+    margin-bottom: 2rem;
+  }
+
+  .lot-legend-status {
+    list-style-type: none;
+    text-align: left;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin: 0 auto 2rem;
+    display: inline-block;
+
+    @include breakpoint($desktop) {
+      position: absolute;
+      top: 10rem;
+      left: 4vw;
+    }
+
+    @include breakpoint($desktop-large) {
+      left: 8vw;
+    }
+
+    .lot-status {
+      @mixin disc-color($color) {
+        &::before {
+          color: $color;
+        }
+      }
+
+      position: relative;
+      padding-left: 2em;
+      line-height: 2;
+
+      &::before {
+        content: '\2022';
+        font-size: 4em;
+        line-height: 0;
+        position: absolute;
+        top: 0.15em;
+        left: -0.1em;
+      }
+
+      &.status-available {
+        @include disc-color($lot-available-color);
+      }
+
+      &.status-quick-possession {
+        @include disc-color($lot-quick-possession-color);
+      }
+
+      &.status-sold {
+        @include disc-color($lot-sold-color);
+      }
+
+      &.status-showhomes {
+        @include disc-color($lot-showhomes-color);
+      }
+
+      &.status-coming-soon {
+        @include disc-color($lot-coming-soon-color);
+      }
+    }
+  }
+
+  .lot-map-svg {
+    // Explicit height necessary for ie11
+    // Aspect ratio of map svg = 150 x 173
+    // 173 / 150 ~= 1.15, 4rem accounts for padding
+    width: 100%;
+    height: calc(115vw - 4rem);
+    margin-bottom: 2em;
+
+    @include breakpoint(825px) {
+      height: 865px; // Achieves max width of 750px
+    }
+
+    .lot {
+      @mixin fill($color) {
+        .lot-path {
+          fill: $color;
+        }
+      }
+
+      @include fill($lot-sold-color);
+
+      &.available {
+        @include fill($lot-available-color);
+      }
+
+      &.quick-possession {
+        @include fill($lot-quick-possession-color);
+      }
+
+      &.showhomes {
+        @include fill($lot-showhomes-color);
+      }
+
+      &.coming-soon {
+        @include fill($lot-coming-soon-color);
+      }
+
+      &.quick-possession,
+      &.available,
+      &.showhomes {
+        cursor: pointer;
+
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+    }
+  }
+
+  .lot-map-details {
+    $width: 200px;
+
+    display: none;
+    position: fixed;
+    z-index: 999;
+    width: $width;
+    margin-left: -1 * $width / 2;
+    margin-top: -5px;
+    filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.2));
+
+    @include breakpoint(768px) {
+      pointer-events: none;
+    }
+
+    &.lot-clicked-open {
+      position: fixed;
+      bottom: auto;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100vw;
+      margin: 0;
+    }
+
+    &.lot-hovered {
+      display: block;
+    }
+
+    .lot {
+      display: none;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      padding: 2em;
+      background-color: #fff;
+      font-size: 11px;
+
+      .close-lot {
+        display: none;
+      }
+
+      &.clicked {
+        display: block;
+        position: static;
+
+        .close-lot {
+          display: block;
+          position: absolute;
+          top: 0;
+          right: 0.5rem;
+          font-size: 2em;
+        }
+      }
+
+      &.hover {
+        display: block;
+      }
+
+      table {
+        width: 100%;
+        margin: 0;
+      }
+
+      th {
+        text-transform: uppercase;
+        font-weight: 300;
+        font-size: 1.2em;
+        font-family: $heading-font-family;
+        padding: 0 0 0.5em;
+      }
+
+      td {
+        padding: 0;
+      }
+
+      tr {
+        border: none;
+      }
+
+      .attribute {
+        font-weight: bold;
+
+        &::after {
+          content: ':';
+        }
+      }
+
+      .thumb {
+        text-align: center;
+        padding-top: 5px;
+        padding-bottom: 5px;
+
+        div {
+          display: inline-block;
+          height: 140px;
+          width: 140px;
+          background: transparent no-repeat center/contain;
+        }
+      }
+
+      .status,
+      .style,
+      .builder {
+        td:first-child {
+          width: 55px;
+        }
+      }
+    }
+  }
+
+  .lot-map-overlay {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+    &.lot-clicked-open {
+      display: block;
+    }
+  }
+
+  .lot-legend-style {
+    list-style-type: none;
+    font-size: 0.8em;
+
+    @include breakpoint($tablet) {
+      column-count: 2;
+      column-gap: $base-spacing;
+    }
+
+    @include breakpoint($desktop) {
+      column-count: 4;
+    }
+
+    li {
+      break-inside: avoid;
+      page-break-inside: avoid; // Firefox
+
+      @keyframes fireFoxFontRepaintHack {
+        // https://evanshunt.lighthouseapp.com/projects/139557/tickets/25-homes-firefox-not-displaying-the-5-columns-of-content-correctly
+        from {
+          width: 99.99%;
+        }
+
+        to {
+          width: 100%;
+        }
+      }
+
+      * {
+        // Safari alignment fix
+        display: inline-block;
+        width: 100%;
+        animation: fireFoxFontRepaintHack 1s;
+      }
+
+      h3 {
+        font-weight: bold;
+        text-align: left;
+      }
+
+      p {
+        text-align: left;
+
+        &:last-child {
+          min-height: 4em;
+        }
+      }
+    }
+  }
+}

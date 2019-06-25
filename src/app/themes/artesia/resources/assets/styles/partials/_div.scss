@@ -1,0 +1,5 @@
+div {
+  &.wrapper {
+    @include regular-margins();
+  }
+}

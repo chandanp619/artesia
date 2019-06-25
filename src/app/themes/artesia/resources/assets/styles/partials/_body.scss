@@ -1,0 +1,39 @@
+html,
+body {
+  height: 100%;
+}
+
+html {
+  font-size: proportional-text($base-font-size, 320px);
+  box-sizing: border-box;
+
+  @include breakpoint($tablet) {
+    font-size: proportional-text($base-font-size, $tablet);
+  }
+
+  @include breakpoint($desktop) {
+    font-size: proportional-text($base-font-size, $desktop);
+  }
+
+  @include breakpoint($desktop-large) {
+    font-size: proportional-text($base-font-size, $desktop-large);
+  }
+
+  @include breakpoint($desktop-xtra-large) {
+    font-size: proportional-text($base-large-font-size, $desktop-xtra-large);
+  }
+}
+
+body {
+  margin: 0;
+  font-family: $base-font-family;
+  color: $base-font-color;
+  line-height: $base-line-height;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}

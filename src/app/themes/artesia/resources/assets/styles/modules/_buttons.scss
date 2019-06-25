@@ -1,0 +1,22 @@
+@mixin button() {
+  background-color: $green;
+  display: inline-block;
+  padding: $small-spacing $base-spacing;
+  transition: background-color $base-duration;
+  border: none;
+  cursor: pointer;
+
+  &::after {
+    content: '»';
+    margin-left: $small-spacing/2;
+  }
+
+  &:hover {
+    @include button-hover();
+  }
+}
+
+@mixin button-hover() {
+  text-decoration: none;
+  background-color: darken($green, 10%);
+}

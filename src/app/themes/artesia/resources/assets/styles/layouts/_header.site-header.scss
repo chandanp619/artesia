@@ -1,0 +1,115 @@
+header.site-header {
+  $header-height: 4rem;
+
+  height: $header-height;
+  display: flex;
+  flex-flow: row nowrap;
+  position: relative;
+  top: 0;
+  width: 100vw;
+  z-index: 999;
+  justify-content: space-between;
+  align-items: stretch;
+  background-color: $white;
+  transition: background-color $base-duration $base-timing;
+
+  @include breakpoint($tablet) {
+    justify-content: center;
+  }
+
+  .brand {
+    padding: 0.5rem 2rem 0.5rem $small-spacing;
+    opacity: 1;
+    transition: opacity $base-duration $base-timing;
+
+    .icon-logo {
+      font-size: 3rem;
+      fill: $base-font-color;
+    }
+  }
+
+  &.menu-open {
+    background-color: $green;
+    position: fixed;
+
+    .brand {
+      opacity: 0;
+    }
+  }
+
+  .mobile-nav-toggle {
+    @extend .hamburger;
+    @extend .hamburger--spin;
+
+    outline: none;
+
+    &::after {
+      display: none;
+    }
+
+    @include breakpoint($tablet) {
+      display: none;
+    }
+  }
+
+  .nav-primary {
+    position: absolute;
+    top: $header-height;
+    width: 100vw;
+    left: 0;
+    background-color: $green;
+    text-transform: uppercase;
+    height: 0;
+    transition: height $base-duration $base-timing;
+    overflow: hidden;
+    text-align: center;
+
+    &.is-open {
+      height: calc(100vh - #{$header-height});
+    }
+
+    @include breakpoint($tablet) {
+      height: auto;
+      position: static;
+      width: auto;
+      background-color: $white;
+    }
+  }
+
+  .nav-primary-menu {
+    @include header-text();
+
+    line-height: 2;
+
+    @include breakpoint($tablet) {
+      display: flex;
+      flex-flow: row nowrap;
+      line-height: $header-height;
+    }
+
+    li {
+      flex: 1 1 auto;
+      display: flex;
+      align-items: stretch;
+    }
+
+    a {
+      color: $base-font-color;
+      padding: 0 $small-spacing;
+      display: block;
+      width: 100%;
+      white-space: nowrap;
+
+      &:hover {
+        text-decoration: none;
+        background: $green;
+      }
+    }
+
+    .current-menu-item {
+      a {
+        background: $green;
+      }
+    }
+  }
+}

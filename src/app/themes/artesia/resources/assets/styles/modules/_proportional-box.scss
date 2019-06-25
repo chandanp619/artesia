@@ -1,0 +1,30 @@
+@mixin proportional-box($aspect-ratio, $vertically-center:false, $contain: true) {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 0;
+  display: block;
+  position: relative;
+
+  @include proportional-box-aspect-ratio($aspect-ratio);
+
+  @if $contain {
+    > * {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      @if $vertically-center {
+        @include enable-vertical-center();
+      }
+
+      width: 100%;
+    }
+  }
+}
+
+@mixin proportional-box-aspect-ratio($aspect-ratio) {
+  padding-top: 1 / $aspect-ratio * 100%;
+}

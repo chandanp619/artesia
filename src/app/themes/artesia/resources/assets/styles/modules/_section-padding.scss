@@ -1,0 +1,39 @@
+@mixin large-padding() {
+  padding-top: 13%;
+  padding-bottom: 13%;
+
+  @include breakpoint($tablet) {
+    padding-top: 10%;
+    padding-bottom: 10%;
+  }
+}
+
+@mixin medium-padding() {
+  padding-top: 11%;
+  padding-bottom: 11%;
+
+  @include breakpoint($tablet) {
+    padding-top: 8%;
+    padding-bottom: 8%;
+  }
+}
+
+@mixin small-padding() {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  @include breakpoint($tablet) {
+    padding-top: 6%;
+    padding-bottom: 6%;
+  }
+}
+
+@mixin no-padding() {
+  padding-top: 0;
+  padding-bottom: 0;
+
+  @include breakpoint($tablet) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}

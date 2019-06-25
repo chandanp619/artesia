@@ -1,0 +1,94 @@
+@mixin no-margins() {
+  padding-left: 0;
+  padding-right: 0;
+
+  @include breakpoint($tablet) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  @include breakpoint($desktop) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  @include breakpoint($desktop-large) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@mixin regular-margins() {
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  @include breakpoint($desktop) {
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
+
+  @include breakpoint($desktop-large) {
+    padding-left: 8vw;
+    padding-right: 8vw;
+  }
+}
+
+@mixin large-margins() {
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  @include breakpoint($tablet) {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  @include breakpoint($desktop) {
+    padding-left: 8vw;
+    padding-right: 8vw;
+  }
+
+  @include breakpoint($desktop-large) {
+    padding-left: 20vw;
+    padding-right: 20vw;
+  }
+}
+
+@mixin additional-margins() {
+  padding-left: 0;
+  padding-right: 0;
+
+  @include breakpoint($tablet) {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  @include breakpoint($desktop) {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+
+  @include breakpoint($desktop-large) {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+}
+
+@mixin additional-large-margins() {
+  padding-left: 0;
+  padding-right: 0;
+
+  @include breakpoint($tablet) {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+
+  @include breakpoint($desktop) {
+    padding-left: 30%;
+    padding-right: 30%;
+  }
+
+  @include breakpoint($desktop-large) {
+    padding-left: 30%;
+    padding-right: 30%;
+  }
+}

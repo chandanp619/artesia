@@ -1,0 +1,150 @@
+.intro-section {
+  text-align: left;
+}
+
+.showhome-n {
+  width: 100%;
+  text-align: left;
+}
+
+.showhome-n .featured-image {
+  width: 40%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.showhome-n .featured-image .slick-prev {
+  left: 9px;
+  z-index: 99999;
+}
+
+.showhome-n .featured-image .slick-next {
+  right: 9px;
+  z-index: 99999;
+}
+
+.showhome-n .showhome-n-details {
+  width: 59%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.showhome-n .showhome-n-details p {
+  margin: auto;
+}
+
+.showhome-n .showhome-n-details .sec-1 {
+  padding: 42px;
+}
+
+.showhome-n .showhome-n-details .sec-1 h2 {
+  margin-top: auto;
+  font-size: 2.3333em;
+}
+
+.showhome-n.odd .showhome-n-details .sec-1 {
+  background: #dcf1f5;
+}
+
+.showhome-n.even .showhome-n-details .sec-1 {
+  background: #fde3dc;
+}
+
+.showhome-n .showhome-n-details .sec-2 {
+  background-color: transparent;
+}
+
+.showhome-n .showhome-n-details .sec-2 .col-1 {
+  padding-left: 40px;
+  width: 30%;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+}
+
+.showhome-n .showhome-n-details .sec-2 .col-2 {
+  width: 30%;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+}
+
+.showhome-n .showhome-n-details .sec-2 .col-3 {
+  width: 38%;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+}
+
+.showhome-n .showhome-n-details .sec-2 .col-3 .builder-logo svg {
+  width: 70%;
+  height: auto;
+}
+
+.showhome-n .showhome-n-details .sec-2 .col-1 .seperator {
+  width: 1px;
+  height: 100px;
+  background-color: #555;
+  position: absolute;
+  top: 10px;
+  right: 1px;
+}
+
+.showhome-n .showhome-n-details .sec-3 .col-1 {
+  padding-left: 20px;
+}
+
+.shownome-n-address {
+  margin-bottom: 20px;
+}
+
+.price {
+  font-size: 2.22vw;
+}
+
+.shownome-n-floor-plan {
+  background-color: #d6ebd0;
+  padding: 10px 20px;
+}
+
+.visit-show-homes {
+  font-size: 1.52vw;
+}
+
+@media only screen and (max-width: 768px) {
+  .showhome-n .featured-image {
+    width: 100%;
+  }
+
+  .showhome-n .showhome-n-details {
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .showhome-n .showhome-n-details .sec-1 {
+    padding: 10px;
+  }
+
+  .price {
+    font-size: 6.22vw;
+  }
+
+  .showhome-n .showhome-n-details .sec-2 .col-1 {
+    padding-left: 20px;
+    width: 49%;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+  }
+
+  .showhome-n .showhome-n-details .sec-2 .col-2 {
+    width: 49%;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+  }
+
+  .visit-show-homes {
+    font-size: 4.52vw;
+  }
+}

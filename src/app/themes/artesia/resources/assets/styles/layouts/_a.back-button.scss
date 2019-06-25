@@ -1,0 +1,19 @@
+a.back-button {
+  //position: absolute;
+  margin-top: 2em;
+
+  @include breakpoint($tablet) {
+    margin-top: 0;
+    position: absolute;
+  }
+
+  &::after {
+    content: '';
+    margin: 0;
+  }
+
+  &::before {
+    content: '«';
+    margin-right: $small-spacing/2;
+  }
+}

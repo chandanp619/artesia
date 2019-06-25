@@ -1,0 +1,91 @@
+header.banner {
+  width: 100vw;
+  display: flex;
+  flex-flow: row nowrap;
+  position: relative;
+  text-align: center;
+  padding-bottom: 1.25rem;
+
+  @include breakpoint($tablet) {
+    padding-bottom: 0;
+  }
+
+  .banner-image {
+    width: 50vw;
+    height: 50vw;
+    flex: 0 0 auto;
+  }
+
+  h1 {
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+    white-space: nowrap;
+    padding-bottom: 0;
+
+    @include breakpoint($tablet) {
+      bottom: 1.5em;
+      left: 2rem;
+      text-align: left;
+      width: auto;
+    }
+
+    @include breakpoint($desktop) {
+      left: 4vw;
+    }
+
+    @include breakpoint($desktop-large) {
+      left: 8vw;
+    }
+
+    .banner-title {
+      padding: $small-spacing $base-spacing;
+      background-color: $red;
+    }
+
+    .banner-title-image {
+      width: auto;
+      height: 1.75em;
+      max-width: 70vw;
+      margin: 0 auto;
+
+      @include breakpoint($tablet) {
+        margin: 0;
+      }
+    }
+  }
+
+  .builder-logo-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    height: 50vw;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include breakpoint($tablet) {
+      width: 50vw;
+    }
+
+    .builder-logo {
+      fill: $white;
+      font-size: 3em;
+
+      .icon-brookfield_grey {
+        @include breakpoint($desktop-large) {
+          font-size: 4em;
+        }
+      }
+
+      &.icon-avi_grey,
+      &.icon-augusta_grey {
+        @include breakpoint($tablet) {
+          font-size: 8em;
+        }
+      }
+    }
+  }
+}

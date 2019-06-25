@@ -1,0 +1,65 @@
+ul#menu-main-menu {
+  position: relative;
+}
+
+ul#menu-main-menu ul.sub-menu {
+  display: none;
+}
+
+ul#menu-main-menu li ul.sub-menu li {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.submenu-visible {
+  display: block !important;
+  position: fixed;
+  top: 80px;
+  z-index: 99999999;
+  background-color: #d6ebd0;
+}
+
+ul#menu-main-menu li.artesia-logo {
+  width: 195px;
+}
+
+.xs #menu-main-menu .artesia-logo {
+  display: none !important;
+}
+
+.lg .xs-logo,
+.md .xs-logo {
+  display: none;
+}
+
+html.xs .xs-logo {
+  display: block;
+  margin: 1px auto;
+}
+
+html.xs .xs-logo svg.icon-logo {
+  width: 160px;
+  height: 75px;
+}
+
+@media only screen and (max-width: 425px) {
+  header.site-header .nav-primary-menu li {
+    display: block !important;
+  }
+
+  ul#menu-main-menu li a {
+    display: block;
+    width: 100%;
+    clear: both;
+  }
+
+  ul#menu-main-menu ul.sub-menu {
+    display: block;
+    clear: both;
+    width: 100%;
+  }
+
+  ul#menu-main-menu ul.sub-menu li a {
+    font-size: 4vw;
+  }
+}

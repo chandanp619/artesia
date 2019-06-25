@@ -1,0 +1,1 @@
+<img src="{!! SingleBlog::bannerImageURL() !!}" class="blog-banner" alt="Banner Image" />

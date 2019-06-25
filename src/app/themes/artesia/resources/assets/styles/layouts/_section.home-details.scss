@@ -1,0 +1,51 @@
+section.home-details {
+  padding-top: 0;
+  margin-top: auto;
+
+  @include breakpoint($tablet) {
+    margin-top: auto;
+  }
+
+  .home-details-list {
+    text-align: center;
+    font-weight: 600;
+    margin-top: 0;
+
+    dd {
+      display: none;
+    }
+
+    dt {
+      display: inline;
+
+      &::after {
+        display: inline;
+      }
+    }
+  }
+
+  .home-detail-group {
+    display: inline;
+
+    &::after {
+      display: inline;
+      content: " | ";
+    }
+
+    &:last-child::after {
+      display: none;
+    }
+  }
+
+  .home-detail-area dt::after {
+    content: " sq ft";
+  }
+
+  .home-detail-beds dt::after {
+    content: " Beds";
+  }
+
+  .home-detail-baths dt::after {
+    content: " Baths";
+  }
+}

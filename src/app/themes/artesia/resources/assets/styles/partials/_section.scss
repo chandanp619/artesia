@@ -1,0 +1,18 @@
+section {
+  @include small-padding();
+
+  // Kill extra white space between components that have white space padding around them by default
+  &.content,
+  &.featured-panel,
+  &.home-tiles,
+  &.logos,
+  &.panel-menu {
+    & + section.content,
+    & + section.featured-panel,
+    & + section.home-tiles,
+    & + section.logos,
+    & + section.panel-menu {
+      padding-top: 0;
+    }
+  }
+}

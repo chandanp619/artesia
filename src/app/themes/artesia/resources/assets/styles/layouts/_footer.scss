@@ -1,0 +1,142 @@
+footer {
+  padding-top: 3.5rem;
+
+  .top {
+    text-align: center;
+  }
+
+  .tagline {
+    @include h3-text();
+  }
+
+  .artesia {
+    padding-top: $small-spacing;
+
+    .icon-logo {
+      font-size: 2.5rem;
+      margin-bottom: $small-spacing;
+    }
+  }
+
+  .builders {
+    border-top: 1px solid $light-brookfield-blue;
+    padding-top: 1rem;
+
+    .title {
+      font-weight: bold;
+    }
+
+    ul {
+      @include no-bullets();
+
+      li {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .bar {
+    position: relative;
+    margin: 3.5rem 3rem $base-spacing 0;
+    padding: 0 $small-spacing;
+    background-color: $brookfield-blue;
+    color: $white;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+
+    p {
+      margin: 0;
+      flex: 1 1 auto;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+
+      span {
+        @include small-text();
+
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 0.5rem;
+        line-height: 1.4;
+      }
+    }
+
+    a {
+      display: none;
+    }
+
+    .icon-brookfield_grey {
+      font-size: 1.5em;
+    }
+
+    .icon-brookfield_b {
+      position: absolute;
+      right: -3rem;
+      color: $brookfield-blue;
+      font-size: 3rem;
+      top: 0;
+    }
+  }
+
+  .copyright {
+    @include small-text();
+
+    text-align: center;
+    padding-bottom: $base-spacing;
+  }
+
+  @include breakpoint($tablet) {
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .artesia {
+      padding-top: 0;
+      display: flex;
+      align-items: center;
+
+      .icon-logo {
+        margin-right: 2rem;
+      }
+    }
+
+    .builders {
+      text-align: left;
+      border-top: 0;
+      border-left: 1px solid $light-brookfield-blue;
+      padding-top: 0;
+      padding-left: 2rem;
+    }
+
+    .bar {
+      height: 4rem;
+      margin-right: 4rem;
+      justify-content: space-between;
+      padding: 0 $base-spacing;
+
+      p {
+        span {
+          @include medium-text();
+        }
+      }
+
+      .icon-brookfield_grey {
+        font-size: 2em;
+      }
+
+      .icon-brookfield_b {
+        font-size: 4rem;
+        right: -4rem;
+      }
+
+      a {
+        display: inline;
+        color: white;
+      }
+    }
+  }
+}

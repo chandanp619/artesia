@@ -1,0 +1,51 @@
+section.logos {
+  text-align: center;
+
+  .logos {
+    @include inline-list();
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-left: -$base-spacing;
+    margin-right: -$base-spacing;
+
+    li {
+      padding-left: $base-spacing;
+      padding-right: $base-spacing;
+      margin-bottom: $base-spacing;
+      width: 50%;
+
+      picture {
+        img {
+          max-width: 100%;
+          max-height: 5.5rem;
+        }
+      }
+
+      .inline-svg-wrapper {
+        svg {
+          max-width: 8rem;
+          height: 5.5rem; //explicit height for ie11
+        }
+      }
+    }
+  }
+
+  @include breakpoint($tablet) {
+    .logos li {
+      width: 20%;
+    }
+  }
+
+  @include breakpoint($desktop) {
+    .logos li {
+      width: 16.66%;
+    }
+  }
+
+  + section {
+    margin-top: -$base-spacing;
+  }
+}

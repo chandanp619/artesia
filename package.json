@@ -1,0 +1,14 @@
+{
+    "scripts": {
+        "install": "cd src/app/themes/artesia; npm install",
+        "build": "cd src/app/themes/artesia; npm run build",
+        "build:production": "cd src/app/themes/artesia; npm run build:production",
+        "build:profile": "cd src/app/themes/artesia; npm run build:profile",
+        "start": "cd src/app/themes/artesia; npm run start",
+        "rmdist": "cd src/app/themes/artesia; npm run rmdist",
+        "lint": "cd src/app/themes/artesia; npm run lint",
+        "lint:scripts": "cd src/app/themes/artesia; npm run lint:scripts",
+        "lint:styles": "cd src/app/themes/artesia; npm run lint:styles",
+        "test": "cd src/app/themes/artesia; npm run test"
+    }
+}

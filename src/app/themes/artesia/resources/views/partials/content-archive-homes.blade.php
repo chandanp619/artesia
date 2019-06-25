@@ -1,0 +1,8 @@
+@include('components.banner', $component_banner)
+@include('components.content-block', $component_content_block)
+@include('components.home-tiles', $component_home_tiles)
+@include('components.lot-map', $component_lot_map)
+@include('components.featured-panel', $component_featured_panel)
+@include('components.logo-bar', $component_logo_bar)
+@include('components.panel-menu', $component_panel_menu)
+@include('components.full-width-panel', $component_full_width_panel)

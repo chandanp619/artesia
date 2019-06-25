@@ -1,0 +1,44 @@
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+/* ==========================================
+Single-colored icons can be modified like so:
+.icon-name {
+  font-size: 32px;
+  color: red;
+}
+========================================== */
+
+.icon-logo {
+  width: 2.7607421875em;
+}
+
+.icon-augusta_grey {
+  width: 1.6513671875em;
+}
+
+.icon-avi_grey {
+  width: 0.7099609375em;
+}
+
+.icon-brookfield_grey {
+  width: 3.6005859375em;
+}
+
+.icon-brookfield_b {
+  width: 0.8623046875em;
+}
+
+.icon-brookfield_colour {
+  width: 3.6005859375em;
+}
+
+.icon-augusta_colour {
+  width: 1.6513671875em;
+}

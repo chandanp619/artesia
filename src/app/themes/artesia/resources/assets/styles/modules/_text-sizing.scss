@@ -1,0 +1,146 @@
+@mixin header-text() {
+  font-family: $heading-font-family;
+  font-weight: 400;
+  font-style: normal;
+  display: block;
+  line-height: $heading-line-height;
+  padding-bottom: 0.1em;
+  margin-bottom: 0.1em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+
+  em {
+    font-family: "herencia", serif;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: none;
+    font-size: 2.5em;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@mixin massive-text() {
+  font-size: em(74px, $base-font-size);
+
+  @include breakpoint($tablet) {
+    font-size: em(74px, $base-font-size);
+  }
+
+  @include breakpoint($desktop) {
+    font-size: em(74px, $base-font-size);
+  }
+
+  @include breakpoint($desktop-large) {
+    font-size: em(74px, $base-large-font-size);
+  }
+}
+
+@mixin h1-text() {
+  @include header-text();
+
+  font-size: em(24px, $base-font-size);
+
+  @include breakpoint($tablet) {
+    font-size: em(30px, $base-font-size);
+  }
+
+  @include breakpoint($desktop) {
+    font-size: em(40px, $base-font-size);
+  }
+
+  @include breakpoint($desktop-large) {
+    font-size: em(60px, $base-large-font-size);
+  }
+}
+
+@mixin h2-text() {
+  @include header-text();
+
+  font-size: em(22px, $base-font-size);
+
+  @include breakpoint($tablet) {
+    font-size: em(24px, $base-font-size);
+  }
+
+  @include breakpoint($desktop) {
+    font-size: em(26px, $base-font-size);
+  }
+
+  @include breakpoint($desktop-large) {
+    font-size: em(30px, $base-large-font-size);
+  }
+}
+
+@mixin h3-text() {
+  @include header-text();
+
+  font-size: em(20px, $base-font-size);
+
+  @include breakpoint($tablet) {
+    font-size: em(22px, $base-font-size);
+  }
+
+  @include breakpoint($desktop) {
+    font-size: em(24px, $base-font-size);
+  }
+
+  @include breakpoint($desktop-large) {
+    font-size: em(26px, $base-large-font-size);
+  }
+}
+
+@mixin h4-text() {
+  @include header-text();
+  @include medium-text();
+}
+
+@mixin large-text() {
+  font-size: em(16px, $base-font-size);
+
+  @include breakpoint($tablet) {
+    font-size: em(17px, $base-font-size);
+  }
+
+  @include breakpoint($desktop) {
+    font-size: em(18px, $base-font-size);
+  }
+
+  @include breakpoint($desktop-large) {
+    font-size: em(19px, $base-large-font-size);
+  }
+}
+
+@mixin medium-text() {
+  font-size: em($base-font-size, $base-font-size);
+
+  @include breakpoint($tablet) {
+    font-size: em($base-font-size, $base-font-size);
+  }
+
+  @include breakpoint($desktop) {
+    font-size: em($base-font-size, $base-font-size);
+  }
+
+  @include breakpoint($desktop-large) {
+    font-size: em($base-large-font-size, $base-large-font-size);
+  }
+}
+
+@mixin small-text() {
+  font-size: em(11px, $base-font-size);
+
+  @include breakpoint($tablet) {
+    font-size: em(11px, $base-font-size);
+  }
+
+  @include breakpoint($desktop) {
+    font-size: em(11px, $base-font-size);
+  }
+
+  @include breakpoint($desktop-large) {
+    font-size: em(11px, $base-large-font-size);
+  }
+}

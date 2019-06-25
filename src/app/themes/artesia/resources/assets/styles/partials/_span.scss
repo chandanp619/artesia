@@ -1,0 +1,5 @@
+span {
+  &.button {
+    @include button();
+  }
+}

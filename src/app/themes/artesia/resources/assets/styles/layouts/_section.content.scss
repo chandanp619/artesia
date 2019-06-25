@@ -1,0 +1,48 @@
+section.content {
+  text-align: center;
+
+  .wrapper {
+    @include large-margins();
+  }
+
+  ul,
+  ol {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: left;
+    list-style-position: outside;
+
+    @include additional-margins();
+  }
+
+  form ul,
+  form ol {
+    @include no-margins();
+    @include no-bullets();
+
+    margin-top: 0;
+  }
+
+  @include breakpoint($tablet) {
+    ul,
+    ol {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      li {
+        width: 45%;
+      }
+    }
+
+    form ul,
+    form ol {
+      display: block;
+
+      li {
+        width: auto;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

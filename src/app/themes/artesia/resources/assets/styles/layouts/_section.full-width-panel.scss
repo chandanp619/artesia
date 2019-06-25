@@ -1,0 +1,36 @@
+section.full-width-panel {
+  text-align: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  .content {
+    background-color: rgba(#fff, 0.85);
+    padding: $base-spacing;
+  }
+
+  @include breakpoint($tablet) {
+    text-align: left;
+
+    .content {
+      margin-left: 50%;
+    }
+
+    .button {
+      margin-left: $base-spacing * -3;
+    }
+
+    &.gallery {
+      text-align: center;
+
+      .content {
+        margin-left: 25%;
+        margin-right: 25%;
+      }
+
+      .button {
+        margin-left: 0;
+      }
+    }
+  }
+}

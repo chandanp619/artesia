@@ -1,0 +1,87 @@
+section.content .wrapper {
+  padding-left: 8vw;
+  padding-right: 8vw;
+}
+
+.blog-wrapper {
+  width: 100%;
+}
+
+.blog-main-content-absolute {
+  margin-top: -200px;
+  margin-right: 72px;
+}
+
+.single-blog .blog-main {
+  width: 69%;
+  text-align: justify;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.single-blog .blog-sidebar {
+  width: 30%;
+  display: inline-block;
+  vertical-align: top;
+  padding: 0 10px;
+}
+
+.single-blog .blog-date span {
+  background-color: #d6ebd0;
+  padding: 5px 15px;
+}
+
+.single-blog h2.blog-title {
+  background-color: #fbd3c9;
+  padding: 0.75rem 1.5rem;
+  font-size: 2.3333em;
+  margin: auto;
+}
+
+.contact-artesia {
+  padding: 10px 20px;
+  margin: 40px auto;
+  background-color: #d6ebd0;
+}
+
+.blog-wrapper a,
+.blog-wrapper a :hover {
+  text-decoration: none;
+}
+
+.single-blog .tag-list {
+  text-align: left;
+}
+
+.single-blog .tags-filter {
+  margin: 1px;
+  padding: 1px;
+  text-align: left;
+}
+
+.single-blog .tags-filter li {
+  text-align: center;
+  width: max-content;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.blog-content {
+  margin-top: 60px;
+}
+
+.blog-content strong {
+  text-transform: uppercase;
+  font-size: 1.135vw;
+}
+
+@media only screen and (max-width: 768px) {
+  .single-blog .blog-main {
+    width: 100%;
+  }
+
+  .single-blog .blog-sidebar {
+    width: 100%;
+    margin-top: 20px;
+  }
+}

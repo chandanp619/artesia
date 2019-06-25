@@ -1,0 +1,111 @@
+section.panel-menu {
+  ul.menu li {
+    @include proportional-box(1);
+
+    text-align: center;
+    margin-bottom: 5px;
+    background-color: $blue;
+
+    .title,
+    .button {
+      position: relative;
+      z-index: 1;
+      flex: 0 0 auto;
+    }
+
+    .title {
+      @include h2-text();
+
+      color: $white;
+      text-shadow: 1px 1px 2px $dark-gray;
+      width: 100%;
+      position: absolute;
+      top: calc(50% - 1em);
+      left: 0;
+      padding: 0 0.2em;
+    }
+
+    .button {
+      white-space: nowrap;
+      margin-bottom: calc(20% - 1.75em);
+    }
+
+    .image {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      position: absolute;
+      top: 20%;
+      bottom: 20%;
+      left: 0;
+      right: 0;
+    }
+
+    a {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: flex-end;
+      align-items: center;
+      text-decoration: none;
+
+      .image {
+        transition: filter $base-duration;
+        filter: grayscale(1);
+      }
+
+      &:hover {
+        .image {
+          filter: grayscale(0);
+        }
+
+        .button {
+          @include button-hover();
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      background-color: $yellow;
+
+      a {
+        .image {
+          top: 20%;
+          bottom: 20%;
+          left: 20%;
+          right: 20%;
+        }
+      }
+    }
+
+    &:nth-child(3) {
+      background-color: $red;
+
+      a {
+        .image {
+          top: 0;
+          bottom: 0;
+          left: 40%;
+          right: 0;
+        }
+      }
+    }
+  }
+
+  @include breakpoint($tablet) {
+    ul.menu {
+      display: flex;
+
+      li {
+        @include proportional-box(3);
+
+        width: 33%;
+        margin-right: 0.5%;
+        margin-bottom: 0;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
