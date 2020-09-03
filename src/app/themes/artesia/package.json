@@ -110,7 +110,7 @@
   "dependencies": {
     "breakpoint-sass": "^2.7.1",
     "jquery": "^3.3.1",
-    "lazysizes": "^4.1.2",
+    "lazysizes": "^5.2.1",
     "lightgallery.js": "^1.1.1",
     "picturefill": "^3.0.2",
     "sass-em": "^1.0.3",
